@@ -1,5 +1,15 @@
 <div>
     <div class="container p-5">
+
+        {{-- message alert --}}
+        @if (session()->has('message'))
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ session()->get('message') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
+
+        @include('livewire.create')
         <table class="table table-striped table-hover">
             <thead class="table-dark">
                 <tr>
